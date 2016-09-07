@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
   root :to => 'welcome#index'
 
@@ -71,4 +72,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+=======
+  resources :posts
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+>>>>>>> parent of bb56238... upload
 end

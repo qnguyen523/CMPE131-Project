@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160423013617) do
 
   create_table "goals", force: :cascade do |t|
@@ -57,6 +58,15 @@ ActiveRecord::Schema.define(version: 20160423013617) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+=======
+ActiveRecord::Schema.define(version: 20160901165608) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> parent of bb56238... upload
   end
 
 end
