@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Steps</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Requirement</th>
+      <th>Completiontime</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @current_user.steps.each do |step| %>
+      <tr>
+        <td><%= step.requirement %></td>
+        <td><%= step.completionTime %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,23 @@
+<div class="content">
+  
+  
+  <p id="notice"><%= notice %></p>
+
+  <center><h1 style="padding-bottom:10px"><strong><u>Your Goals</u></strong></h1></center>
+
+  <p>
+    <ul>
+    <% @goals.each do |goal| %>
+    <!-- Ensure that you only display goals for current user -->
+    <% if current_user.id == goal.user_id %>
+      <li style="font-size:20px; list-style-type:square"><%= link_to goal.Goal, goal, class: 'goalLink'%> (Due by: <%= goal.DueDate %>) | <%= link_to 'Delete', goal, class: 'delete', method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+    <% end %>
+    <% end %>
+    </ul>
+  </p>
+
+  <br>
+  <%= link_to 'Create A New Goal', new_goal_path, {:style=>'font-size: 18px;', :class => "css_class"} %>
+  <!-- end .content -->
+</div>
