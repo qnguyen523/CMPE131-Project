@@ -6,9 +6,36 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
   <body>
+ 	<div id="wrapper">
+ 		<header>
+ 			<%= link_to image_tag("logo.png",alt: "Page Logo"),
+ 			"/",
+ 			{:class => 'websiteLogo'} %>
+
+ 			<%= link_to 'Amazing Title', "/",
+ 			{:style=>'color:#00008B;',:class => 'websiteTitle'} %>
+ 			<input type="text" id="search-input">
+ 
+     		<a href="#" id="search-button">Search</a>
+     		<b id="log"> 
+     			<%= link_to 'Sign In', {:controller => 'static_pages', :action =>'home'}%>
+     			<%= link_to 'Sign Up', {:controller => 'static_pages', :action =>'home'}%>
+     		</b>
+		</header>
+		<nav id="horzNav">
+ 			<%= link_to 'Home', "/"%>
+ 			<%= link_to 'Posts', {:controller => 'posts', :action =>'index'}%>
+ 			<%= link_to 'Users', {:controller => 'users', :action =>'index'}%>
+ 			
+ 		</nav>
+ 		
+
     <%= yield %>
+    
   </body>
 </html>

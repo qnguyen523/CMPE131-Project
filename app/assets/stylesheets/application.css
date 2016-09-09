@@ -13,3 +13,106 @@
  *= require_tree .
  *= require_self
  */
+ a:hover {
+  color: #FF0800;
+  background-color: #FFCBA4;
+}
+ body{
+ 	background: #8CBED6;
+ }
+ div#wrapper{
+ 	margin:auto;
+ 	background: #FFCBA4;
+ 	width: 1500px;
+ 	height:1700px;
+ }
+ header {
+	display: block;
+	padding: 20px 10px 50px 10px;
+}
+
+.websiteLogo{
+	float: left;
+	text-decoration: none;
+}
+
+.websiteTitle {
+  font-size: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline;
+  line-height: 90px;
+  padding-left: 60px;
+}
+.websiteTitle:hover {
+  background-color: #FFCBA4;
+  color: black;
+}
+#search-input{
+	position: relative;
+  width: 302px;
+  vertical-align: 80%;
+  top: -40px;
+ left: 500px;
+}
+ 
+#search-button{
+position: relative;
+  vertical-align: 80%;
+  background-color: #00647D;
+  padding: 5px 12px;
+  font: 13px sans-serif;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-color: #aaa #444 #444 #aaa;
+  color: #FFF;
+  top: -40px;
+left: 500px;
+}
+#horzNav {
+  display:block;
+  /* Padding Top, Right, Bottom, Left */
+  padding: 10px 20px 10px 10px;
+  background: black;
+}
+#horzNav a {
+  text-decoration: none;
+  padding: 0px 0px 0px 20px;
+  font-weight: bold;
+  color: white;
+}
+ 
+#horzNav a:hover {
+  background-color: black;
+  color: #FF0800;
+}
+main {
+  /* Padding Top, Right, Bottom, Left */
+  padding: 10px 20px 20px 20px;
+}
+#log {
+	position:relative;
+	padding: 5px 10px 5px 10px;
+	left: 350px;
+	top:67px;
+	background:#007FFF;
+}
+#log a {
+	text-decoration: none;
+	padding: 0px 10px 0px 10px;
+	font-weight: bold;
+  color: white;
+}
+#log a:hover {
+	background-color:#007FFF;
+	color:yellow;
+}
+.content {
+	display:block;
+  /* Padding Top, Right, Bottom, Left */
+  
+  padding: 15px 30px 10px 30px;
+  background: white;
+  width: 1000px;
+  border:5px solid #0048BA;
+}
