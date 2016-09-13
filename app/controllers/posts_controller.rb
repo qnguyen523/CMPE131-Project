@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  #before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy, :edit, :update]
+  before_action :correct_user, only: [:destroy, :edit, :update]
 
   # GET /posts
   # GET /posts.json
@@ -10,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
   end
 
   # GET /posts/new
@@ -24,7 +27,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save
@@ -62,13 +66,28 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :user_id)
+      params.require(:post).permit(:title, :body)
     end
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "please log in"
+        redirect_to login_url
+      end
+    end
+    
+     #make sure if the one doing action is the correct user
+    def correct_user
+      @post = current_user.posts.find_by(id: params[:id])
+      redirect_to root_url if @post.nil?
+    end
+
+
+
+
+
+
 end

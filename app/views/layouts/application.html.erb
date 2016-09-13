@@ -11,31 +11,59 @@
   </head>
 
   <body>
- 	<div id="wrapper">
- 		<header>
- 			<%= link_to image_tag("logo.png",alt: "Page Logo"),
- 			"/",
- 			{:class => 'websiteLogo'} %>
+  <div id="container">
+    <div id="headwrap">
+ 		  <header>
+      
+ 			
 
- 			<%= link_to 'Amazing Title', "/",
- 			{:style=>'color:#00008B;',:class => 'websiteTitle'} %>
- 			<input type="text" id="search-input">
+ 			  <%= link_to 'SJSU Textbook Exchange®', "/",
+ 			  {:style=>'color:#606060;;',:class => 'websiteTitle'} %>
+        <!-- Add search box and button
+ 			  <input type="text" id="search-input">
  
      		<a href="#" id="search-button">Search</a>
-     		<b id="log"> 
-     			<%= link_to 'Sign In', {:controller => 'static_pages', :action =>'home'}%>
-     			<%= link_to 'Sign Up', {:controller => 'static_pages', :action =>'home'}%>
-     		</b>
-		</header>
-		<nav id="horzNav">
- 			<%= link_to 'Home', "/"%>
- 			<%= link_to 'Posts', {:controller => 'posts', :action =>'index'}%>
- 			<%= link_to 'Users', {:controller => 'users', :action =>'index'}%>
- 			
- 		</nav>
- 		
+        -->
+        <div id="horzNav">
+          <%= link_to 'Home', "/"%>
+          <%= link_to "Help", help_path %>
+		  <%= link_to "Posts", posts_path %>
+          <%= link_to 'About', {:controller => 'static_pages', :action =>'help'}%>
+          <% if logged_in? %>
+			 <%= link_to "Users", users_path %>
+			 <%= link_to "Profile", current_user %>
+			 <%= link_to "Log out", logout_path, method:"delete" %>
+			 <% else %>
+			  <%= link_to "Log in", login_path %>
+		  <% end %>
+          <%= link_to 'More', "/"%>
+        
+       </div>
+		  </header>
+    </div>
+ 	<div id="bodywrap">
 
     <%= yield %>
-    
+  </div>
+    <div id="footwrap">
+      <div id="leftfoot">
+       <%= link_to 'SJSU Textbook Exchange®', "/",
+          {:id => 'leftfoot1'} %>
+       <p id="leftfoot2">
+          © 2016 by RailsCoders.
+        </p>
+      </div>
+      <div id="midfoot">
+       <p id="midfoot1">
+          
+Software Engineering I<br>
+CMPE 131 - 03<br>
+San Jose State University<br>
+Fall 2016
+        </p>
+      </div>
+    </div>
+  </div>
   </body>
+
 </html>

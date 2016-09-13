@@ -1,19 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First:</strong>
-  <%= @user.first %>
-</p>
+<h1> Profile </h1>
 
-<p>
-  <strong>Last:</strong>
-  <%= @user.last %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<%# someone make this thing display horizontally %>
+<ul id="menu">
+  <li><strong>First:</strong>
+  <%= @user.first %></li>
+
+  <li><strong>Last:</strong>
+  <%= @user.last %></li>
+
+  <li><strong>Email:</strong>
+  <%= @user.email %></li>
+</ul>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<div>
+	<% if @user.posts.any? %>
+	  <h1> Posts (<%= @user.posts.count %>)</h1>
+	  <ol class="posts" >
+	    	<%= render @user.posts %>
+	  </ol>
+	<% end %>
+</div>
