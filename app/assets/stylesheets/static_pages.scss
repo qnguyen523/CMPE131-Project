@@ -3,23 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .homepic{
   position: relative;
-  top:50px;
-  left:380px;
-  z-index: -1;
+  left:75px;
+  top:10px;
 }
 .buttons{ 
   position:relative;
-  left:384px;
-  top:-36px;
+  top:-85px;
+  left:75px;
   table-layout: fixed;
   border-collapse: collapse;
 }
 .buttons button{ 
   height:70px;
-  width: 205px;
+  width: 177px;
   background-color:#01B1AF;
   color:white;
 }
 .buttons button:hover{
 	background-color: #007B9A;
+}
+/* css code does not work here*/
+.circular_image {
+  position: relative;
+  width: 300;
+  height: 150;
+  background-size: cover;
+  display: block;
+  border-radius: 50px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
 }

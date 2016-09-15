@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:show, :edit, :update]
-  before_action :correct_user, only: [:show, :edit, :update]
+  before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -9,8 +9,10 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1
-  # GET /users/1.json
+  # GET /users/1.jsons
   def show
+    @user = User.find(params[:id])
+    @posts = @user.posts
   end
 
   # GET /users/new
@@ -84,7 +86,10 @@ class UsersController < ApplicationController
      #make sure if the one doing action is the correct user
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(users_path) unless @user == current_user
+      unless @user == current_user
+        flash[:notice] = "Only edit your own account"
+        redirect_to(users_path) 
+      end
     end
    
 

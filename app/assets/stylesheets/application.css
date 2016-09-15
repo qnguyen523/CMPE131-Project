@@ -13,10 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
  a:hover{
   color: #FF0800;
   background-color: white;
 }
+
 main{
   padding: 10px 20px 20px 20px;
 }
@@ -24,48 +26,55 @@ main{
   display: block;
   padding: 20px 10px 50px 10px;
 }
- body{
+ html, body{
   margin:0;
   padding:0;
   height:100%;
  	background: #F2F2F2;
 }
 
-
  div#container{
-   min-height:100%;
-   position:relative;
+  box-sizing: border-box;
+  padding: 110px 0px 150px 0px;
+  position: relative;
+  min-height:100%;
 }
  div#headwrap{
   position:absolute;
   top: 0;
   left: 0;
   width:100%;
-  height:150px;
+  height:110px;
   background: white;
 }
  div#bodywrap{
-  padding:150px 100px 200px 100px;
-  min-height: 667px;
+  width: 900px;
+  min-height: 100%;
+  margin: 0 auto ; 
+  border: 2px solid #01B1AF;
 }
+
  div#footwrap{
   position: absolute;
   bottom: 0;
-  left:0;
+  left: 0;
   width: 100%;
-  height:200px;
+  height:175px;
   background: white;
 }
+
 /*WEBSITE TITLE*/
  .websiteTitle{
-  position:relative;
-  top:-10px;
-  right:-400px;
+  position: absolute;
+  left: 23%;
+  top:5px;
+  margin-left: -250px;
   font-size: 28px;
   text-decoration: none;
   display: inline;
   line-height: 90px;
   padding-left: 60px;
+  
 }
 .websiteTitle:hover{
   background-color: white;
@@ -73,9 +82,15 @@ main{
 }
  /*NAVIGATION BAR*/
  div#horzNav{
+  position: absolute;
+  right: 2%;
+  top:30px;
+  margin-left: -200px;
+  /*
+  float: right;
   position: relative;
-  top:-60px;
-  left:1000px;
+  right:50px;
+  */
   width:400px;
   display:block;
   /* Padding Top, Right, Bottom, Left */
@@ -120,10 +135,9 @@ left: 800px;
 
 /*FOOT OF THE LAYOUT*/
 #leftfoot{
-  position: relative;
-  top:20px;
-  left:430px;
-  float:left;
+  position:absolute;
+  right:71%;
+  margin-right:-250px;
 width:500px;
 }
 
@@ -142,17 +156,17 @@ width:500px;
   color:#A8A8AA
 }
 #midfoot{
-  position: relative;
-  top:20px;
-  left:410px;
+  position:absolute;
+  left:75%;
+  margin-left:-130px;
   width: 260px;
-  margin-right: 20px;
-  float: left;
-
+  /*margin-right: 20px;*/
 }
 #midfoot1{
   color:#A8A8AA;
 }
+
+
 
 
 
