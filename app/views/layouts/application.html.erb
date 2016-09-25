@@ -6,13 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
   </head>
 
   <body>
     <div id="container">
-      <div id="headwrap">
+      <div id="container-fluid">
         <header>
           <%= link_to 'SJSU Textbook Exchange®', "/",
           {:style=>'color:#606060;;',:class => 'websiteTitle'} %>
@@ -26,9 +24,34 @@
             <%= link_to "Help", static_pages_help_path %>
             <%= link_to "Ads", ads_path %>
             <%= link_to 'About', static_pages_about_path %>
-            <%= link_to 'More', "/"%>
+
+            <!-- more -->
+           <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">More</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a><%= link_to "Log in", new_user_session_path %> </a>
+              <a><%= link_to "New Ad", new_ad_path %> </a>
+              <a><%= link_to "New Ad", new_ad_path %> </a>
+            </div>
           </div>
+
+
+
+
+
+            <% if logger? %>
+               <%= link_to "Log out", destroy_user_session_path, method:"delete" %>
+            <% else %>
+               <%= link_to "Log in", new_user_session_path %>
+            <% end %>
+
+
+
+          </div><!-- end of horzNav-->
+
+
         </header>
+  
       </div><!--END OF HEADWRAP-->
 
       <div id="bodywrap">
