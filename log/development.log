@@ -385,3 +385,545 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 219ms (Views: 217.8ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePosts (20160925104948)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "book_title" varchar, "edition" varchar, "author" varchar, "subject" varchar, "isbn" varchar, "price" varchar, "picture" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160925104948"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePosts (20160925104948)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20160925104948"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAds (20160925105153)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ads" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "book_title" varchar, "edition" varchar, "author" varchar, "subject" varchar, "isbn" varchar, "price" varchar, "picture" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ads_on_user_id" ON "ads" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160925105153"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ads_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ads_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/ads/new" for ::1 at 2016-09-25 03:57:41 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AdsController#new as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-25 03:57:41 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 662ms (Views: 643.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-09-25 03:57:44 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wGa2Fk2yuMxr3LZF6xvhyXcYbuxBXrzvzXkDVFusAG9yjLSxGyrQcogQaafB58Pj/rAHsdjXUrjJrrp8S/RZlQ==", "user"=>{"email"=>"qnguyen523@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "qnguyen523@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wGa2Fk2yuMxr3LZF6xvhyXcYbuxBXrzvzXkDVFusAG9yjLSxGyrQcogQaafB58Pj/rAHsdjXUrjJrrp8S/RZlQ==", "user"=>{"email"=>"qnguyen523@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 198ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-09-25 03:57:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 108ms (Views: 102.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-25 03:57:59 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 03:58:03 -0700
+Processing by AdsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-25 03:58:03 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 95ms (Views: 91.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-09-25 03:58:09 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 104ms (Views: 102.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-25 03:58:15 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bhzRNHiif45qR8ijIsjgSOTyFGX68KXIPyoTulUxEihRo9Y6lO6F/NNN4dwaYJM4hSn3TQ6moxyUESsVhQys/A==", "user"=>{"email"=>"qnguyen523@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "qnguyen523@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "qnguyen523@gmail.com"], ["encrypted_password", "$2a$11$WqqnR2PlW0o4kgkT057QfOHETZw/z.3adQqWbOqbwdmkT6etZozCu"], ["confirmation_token", "ENGtyCVPKodLs9CkkRm-"], ["confirmation_sent_at", 2016-09-25 10:58:15 UTC], ["created_at", 2016-09-25 10:58:15 UTC], ["updated_at", 2016-09-25 10:58:15 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 163.1ms
+Sent mail to qnguyen523@gmail.com (6.8ms)
+Date: Sun, 25 Sep 2016 03:58:15 -0700
+From: do_not_reply@gmail.com
+Reply-To: do_not_reply@gmail.com
+To: qnguyen523@gmail.com
+Message-ID: <57e7adc75aa66_14f0b3ff4361bb024864b6@Peters-MBP.hsd1.ca.comcast.net.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome qnguyen523@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=ENGtyCVPKodLs9CkkRm-&amp;locale=en">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 322ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-25 03:58:15 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 77ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=ENGtyCVPKodLs9CkkRm-&amp;locale=en" for ::1 at 2016-09-25 03:58:33 -0700
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"ENGtyCVPKodLs9CkkRm-", "amp"=>nil, "locale"=>"en"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "ENGtyCVPKodLs9CkkRm-"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", 2016-09-25 10:58:33 UTC], ["updated_at", 2016-09-25 10:58:33 UTC], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-25 03:58:33 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 66ms (Views: 64.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-09-25 03:58:36 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WPdr6BqmzjzqlgLK8QC7jcuyYDY5MFoM1CVUs2WsLN/qHWlPTD6mggla3Sjb/JmnQhoJa6C5tFvQ8u2bdfR1JQ==", "user"=>{"email"=>"qnguyen523@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "qnguyen523@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-09-25 10:58:36 UTC], ["last_sign_in_at", 2016-09-25 10:58:36 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", 2016-09-25 10:58:36 UTC], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/ads
+Completed 302 Found in 141ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 03:58:36 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 73ms (Views: 64.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ads/new" for ::1 at 2016-09-25 03:59:16 -0700
+Processing by AdsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (7.1ms)
+  Rendered ads/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 80ms (Views: 64.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 03:59:42 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 76ms (Views: 70.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-09-25 03:59:47 -0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-25 03:59:53 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ads/new" for ::1 at 2016-09-25 04:03:49 -0700
+Processing by AdsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (4.2ms)
+  Rendered ads/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 91ms (Views: 64.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/ads" for ::1 at 2016-09-25 04:04:07 -0700
+Processing by AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aP8Pwsn6bWcVIIYhsQmXuye6t2KXVcpDldFnm7R1uYM2QvvVVZ9dgXVPGsOnH4e5qKP6MAwiSePUwz5Kc5qpdQ==", "ad"=>{"title"=>"", "body"=>"", "book_title"=>"", "edition"=>"", "author"=>"", "subject"=>"", "isbn"=>"", "price"=>"", "picture"=>#<ActionDispatch::Http::UploadedFile:0x007fe87144b3b0 @tempfile=#<Tempfile:/var/folders/28/r2g456gn1n1b82gf_rp6n5x80000gn/T/RackMultipart20160925-85771-149ud9m.png>, @original_filename="meeting.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"ad[picture]\"; filename=\"meeting.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Ad"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ads" ("title", "body", "book_title", "edition", "author", "subject", "isbn", "price", "picture", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["book_title", ""], ["edition", ""], ["author", ""], ["subject", ""], ["isbn", ""], ["price", ""], ["picture", "meeting.png"], ["user_id", 1], ["created_at", 2016-09-25 11:04:07 UTC], ["updated_at", 2016-09-25 11:04:07 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/ads/1
+Completed 302 Found in 25ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/ads/1" for ::1 at 2016-09-25 04:04:07 -0700
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/show.html.erb within layouts/application
+  Rendered ads/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `picture?' for nil:NilClass):
+    21:   <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+    22:   <dd><%= @ad.price %></dd>
+    23:   <dt><strong><%= model_class.human_attribute_name(:picture) %>:</strong></dt>
+    24:   <dd><%= image_tag(@ad.picture.url, size: "200x200") if @image.picture? %></dd>
+    25:   
+    26: </dl>
+    27: 
+  
+app/views/ads/show.html.erb:24:in `_app_views_ads_show_html_erb__3857720174246334301_70318171715060'
+  Rendering /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.1ms)
+Started GET "/ads/1" for ::1 at 2016-09-25 04:05:17 -0700
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/show.html.erb within layouts/application
+  Rendered ads/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ads/1/edit" for ::1 at 2016-09-25 04:05:25 -0700
+Processing by AdsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/edit.html.erb within layouts/application
+  Rendered ads/_form.html.erb (6.1ms)
+  Rendered ads/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 69ms (Views: 61.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 04:05:29 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 84ms (Views: 79.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ads/1" for ::1 at 2016-09-25 04:05:33 -0700
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/show.html.erb within layouts/application
+  Rendered ads/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 99ms (Views: 90.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ads/new" for ::1 at 2016-09-25 04:07:07 -0700
+Processing by AdsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (4.3ms)
+  Rendered ads/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 63ms (Views: 61.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/ads/new" for ::1 at 2016-09-25 04:07:32 -0700
+Processing by AdsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (3.9ms)
+  Rendered ads/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 71ms (Views: 67.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ads/new" for ::1 at 2016-09-25 04:07:41 -0700
+Processing by AdsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (5.3ms)
+  Rendered ads/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 85ms (Views: 79.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ads/new" for ::1 at 2016-09-25 04:07:48 -0700
+Processing by AdsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (4.8ms)
+  Rendered ads/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 69ms (Views: 66.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ads/new" for ::1 at 2016-09-25 04:08:21 -0700
+Processing by AdsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (4.7ms)
+  Rendered ads/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 70ms (Views: 67.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/ads/new" for ::1 at 2016-09-25 04:08:38 -0700
+Processing by AdsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (4.3ms)
+  Rendered ads/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 78ms (Views: 74.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 04:17:42 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+ArgumentError (Unknown key: :presence. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  
+app/models/ad.rb:4:in `<class:Ad>'
+app/models/ad.rb:1:in `<top (required)>'
+app/controllers/ads_controller.rb:7:in `index'
+  Rendering /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Peter/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.4ms)
+Started GET "/ads" for ::1 at 2016-09-25 04:19:48 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 142ms (Views: 122.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 04:23:05 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 04:24:39 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 62ms (Views: 57.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 04:25:53 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 74ms (Views: 71.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ads/new" for ::1 at 2016-09-25 04:25:58 -0700
+Processing by AdsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (5.9ms)
+  Rendered ads/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 75ms (Views: 70.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/ads" for ::1 at 2016-09-25 04:26:08 -0700
+Processing by AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iGBlQA9HkV4dLtYglvgAvJG34xvrUXLZf0bHPRts6lF+XUeVfkmv49voaEinufQq/GqZWqCosTpvKjPn7BbGrw==", "ad"=>{"title"=>"new book", "body"=>"", "book_title"=>"", "edition"=>"", "author"=>"", "subject"=>"", "isbn"=>"", "price"=>""}, "commit"=>"Create Ad"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering ads/new.html.erb within layouts/application
+  Rendered ads/_form.html.erb (8.3ms)
+  Rendered ads/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 93ms (Views: 87.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/ads" for ::1 at 2016-09-25 04:26:20 -0700
+Processing by AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kzN3/Pk6ZkVJMaSY8s33gBiy58StNvwIp7XBP45nr3nNjoPrZV9WoyleOHrk2+eCl6uqljZBf6jmp5juSYi/jw==", "ad"=>{"title"=>"new book", "body"=>"new", "book_title"=>"", "edition"=>"", "author"=>"", "subject"=>"", "isbn"=>"", "price"=>"", "picture"=>#<ActionDispatch::Http::UploadedFile:0x007fe8737de1d8 @tempfile=#<Tempfile:/var/folders/28/r2g456gn1n1b82gf_rp6n5x80000gn/T/RackMultipart20160925-85771-1wwq80z.png>, @original_filename="meeting.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"ad[picture]\"; filename=\"meeting.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Ad"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ads" ("title", "body", "book_title", "edition", "author", "subject", "isbn", "price", "picture", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "new book"], ["body", "new"], ["book_title", ""], ["edition", ""], ["author", ""], ["subject", ""], ["isbn", ""], ["price", ""], ["picture", "meeting.png"], ["user_id", 1], ["created_at", 2016-09-25 11:26:20 UTC], ["updated_at", 2016-09-25 11:26:20 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/ads/2
+Completed 302 Found in 111ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/ads/2" for ::1 at 2016-09-25 04:26:20 -0700
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ads/show.html.erb within layouts/application
+  Rendered ads/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 81ms (Views: 76.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 04:26:23 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.1ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 90ms (Views: 84.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ads" for ::1 at 2016-09-25 04:27:25 -0700
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 77ms (Views: 73.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ads/2" for ::1 at 2016-09-25 04:27:37 -0700
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ads/show.html.erb within layouts/application
+  Rendered ads/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 108ms (Views: 99.9ms | ActiveRecord: 0.8ms)
+
+
