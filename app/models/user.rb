@@ -1,21 +1,7 @@
 class User < ApplicationRecord
-	has_many :posts, dependent: :destroy
-	before_save {self.email = email.downcase}
-	
-	validates :first, :last, presence: true,
-					 length: {maximum: 50}
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable
 
-	VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email, presence: true,
-					length: { maximum: 100},
-					format: { with: VALID_EMAIL},
-					uniqueness: { case_sensitive: false}
-	
-	has_secure_password
-	validates :password, presence: true,
-					 length: {minimum: 6}
-	attr_accessor :remember_token
-
-	
-	
 end
