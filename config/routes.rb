@@ -6,8 +6,16 @@ Rails.application.routes.draw do
     resources :comments
     resources :books
   end
-  resources :users
 
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
+  resources :conversations do
+    resources :messages
+  end
+  
   get 'static_pages/home'
   get 'static_pages/help'
   get 'static_pages/about'
@@ -20,6 +28,19 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index'
   get '/post', to: 'posts#index'
 
+  # mailbox folder routes
+  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
+
+  #routes for conversation
+  resources :conversations do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
 
   root 'static_pages#home'
   
