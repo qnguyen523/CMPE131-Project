@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
+  
   get 'sessions/new'
 
-  resources :posts
-  resources :users do
-    member do
-      get :confirm_email
-    end
+  resources :posts do
+    resources :comments
+    resources :books
   end
-  resources :conversations do
-    resources :messages
-  end
+  resources :users
 
   get 'static_pages/home'
   get 'static_pages/help'
@@ -22,22 +19,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/users', to: 'users#index'
   get '/post', to: 'posts#index'
-
-  # mailbox folder routes
-  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
-  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
-  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
-
-  #routes for conversation
-  resources :conversations do
-    member do
-      post :reply
-      post :trash
-      post :untrash
-    end
-  end
-
-
 
 
   root 'static_pages#home'

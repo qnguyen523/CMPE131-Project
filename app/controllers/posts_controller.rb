@@ -13,15 +13,19 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @books = @post.books.all
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+
   end
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
+    @books = @post.books.all
   end
 
   # POST /posts

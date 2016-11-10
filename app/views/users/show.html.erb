@@ -17,9 +17,6 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-<% id = @user.id %>
-<%= link_to 'Send Message', new_conversation_path(:id => id) %>
-<%= id %>
 
 <div>
 	<% if @user.posts.any? %>
