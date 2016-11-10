@@ -1,0 +1,35 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.homepic{
+  position: relative;
+  left:75px;
+  top:10px;
+}
+.buttons{ 
+  position:relative;
+  top:-85px;
+  left:75px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.buttons button{ 
+  height:70px;
+  width: 177px;
+  background-color:#01B1AF;
+  color:white;
+}
+.buttons button:hover{
+	background-color: #007B9A;
+}
+/* css code does not work here*/
+.circular_image {
+  position: relative;
+  width: 300;
+  height: 150;
+  background-size: cover;
+  display: block;
+  border-radius: 50px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
