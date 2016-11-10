@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <p id="notice"><%= notice %></p>
     <div id="container">
       <div id="headwrap">
  		    <header>
@@ -29,6 +30,8 @@
             <% if logged_in? %>
 			         <%= link_to "Users", users_path %>
 			         <%= link_to "Profile", current_user %>
+               <!--link to mailbox for messaging-->
+               <%= link_to "Inbox", mailbox_inbox_path %>
 			         <%= link_to "Log out", logout_path, method:"delete" %>
 			         (Log in as <%= current_user.first %>)
 			      <% else %>

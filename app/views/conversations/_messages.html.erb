@@ -1,0 +1,6 @@
+<% @receipts.each do |receipt| %>
+    <% message = receipt.message %>
+          <b><%= message.sender.first %> (message partial)</b><br>
+                 <%= message.body %>
+          <small>(<%= message.created_at.strftime("%I:%M %p %b %d") %>)</small><br>
+<% end %>
