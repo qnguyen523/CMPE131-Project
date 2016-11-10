@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
-  
   get 'sessions/new'
 
-  resources :posts do
-    resources :comments
-    resources :books
-  end
-
+  resources :posts
   resources :users do
     member do
       get :confirm_email
@@ -15,7 +10,7 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
-  
+
   get 'static_pages/home'
   get 'static_pages/help'
   get 'static_pages/about'
@@ -41,6 +36,9 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
+
+
+
 
   root 'static_pages#home'
   

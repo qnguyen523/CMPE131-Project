@@ -30,11 +30,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        log_in @user
-        format.html { redirect_to @user, notice: 'Welcome to our website, ' + @user.first }
+        UserMailer.registration_confirmation(@user).deliver_now
+        #log_in @user
+        format.html { redirect_to root_url, notice: 'Welcome to our website, please confirm your email' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { render :new, notice: 'Something is wrong in create' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -63,6 +64,20 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  #Kim: for email confirmation
+  def confirm_email
+    user = User.find_by_confirm_token(params[:id])
+    if user
+      user.email_activate
+      flash[:success] = 'in usercontroller, confirm_email success. Your account has been confirmed'
+      redirect_to root_url
+    else
+      flash[:error] = 'Error: User does not exist.'
+      redirect_to root_url
+    end
+  end
+
 
   private
 
