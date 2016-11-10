@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-	has_many :posts, dependent: :destroy
+	before_save {self.email = email.downcase}
+	before_create :confirmation_token
+
 	has_many :posts, dependent: :destroy
 	before_save {self.email = email.downcase}
 	
@@ -17,6 +19,27 @@ class User < ApplicationRecord
 					 length: {minimum: 6}
 	attr_accessor :remember_token
 
-	
+	#added for mailboxer
+	acts_as_messageable
+	def mailboxer_name
+		self.first
+	end
+
+	def mailboxer_email(object)
+		self.email
+	end
+	#added for email activation
+	def email_activate
+ 		self.email_confirmed = true
+ 		self.confirm_token = nil
+ 		save!(:validate =>false)
+ 	end
+
+	private
+	def confirmation_token
+		if self.confirm_token.blank?
+			self.confirm_token = SecureRandom.urlsafe_base64.to_s
+		end	
+	end
 	
 end
