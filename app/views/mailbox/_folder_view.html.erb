@@ -1,10 +1,12 @@
-<!-- link_to "Compose", new_conversation_path -->
+<!--Reference: Mailboxer and private messaging tutorial
+From: http://josephndungu.com/tutorials/private-inbox-system-in-rails-with-mailboxer-->
 <%= render 'mailbox/folders' %>
      
-
 <% if is_conversation %>
   <%= render 'conversations/form' %>
 <% else %>
-  <b> Conversations </b><br>
   <%= render partial: 'conversations/conversation', collection: messages %>
 <% end %>
+
+
+

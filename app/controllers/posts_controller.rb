@@ -6,7 +6,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    # @posts = Post.all
+    @posts = Post.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /posts/1
@@ -14,6 +15,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @books = @post.books.all
+    # no need pagination here
+    # @books = @books.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /posts/new
@@ -26,6 +29,8 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @books = @post.books.all
+    # no need pagination here
+    # @books = @books.paginate(:page => params[:page], :per_page => 5)
   end
 
   # POST /posts
@@ -89,7 +94,7 @@ class PostsController < ApplicationController
       @user = User.find(@post.user_id)
       unless @user == current_user
         flash[:notice] = "Only correct user can edit/destroy"
-        redirect_to(users_path) 
+        redirect_to posts_path
       end
     end
 

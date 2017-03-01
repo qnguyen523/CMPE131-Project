@@ -19,6 +19,8 @@ class User < ApplicationRecord
 					 length: {minimum: 6}
 	attr_accessor :remember_token
 
+
+	#Reference: Private messaging tutorial http://josephndungu.com/tutorials/private-inbox-system-in-rails-with-mailboxer
 	#added for mailboxer
 	acts_as_messageable
 	def mailboxer_name
@@ -28,6 +30,8 @@ class User < ApplicationRecord
 	def mailboxer_email(object)
 		self.email
 	end
+
+	#Reference: Email Confirmation Tutorial https://coderwall.com/p/u56rra/ruby-on-rails-user-signup-email-confirmation-tutorial
 	#added for email activation
 	def email_activate
  		self.email_confirmed = true

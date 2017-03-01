@@ -14,6 +14,8 @@
  *= require_self
  */
 
+.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee}
+
  a:hover{
   color: #FF0800;
   background-color: white;
@@ -30,24 +32,83 @@ main{
   margin:0;
   padding:0;
   height:100%;
- 	background: #F2F2F2;
+  background: #F2F2F2;
 }
 
  div#container{
   box-sizing: border-box;
-  padding: 110px 0px 150px 0px;
+  padding: 0px 0px 150px 0px;
   position: relative;
+  min-width: 950px;
   min-height:100%;
+  background-color: #F2F2F2;
 }
+div#topBar{
+  height:20px;
+
+  display:block;
+  /* Padding Top, Right, Bottom, Left */
+  padding: 5px 20px 0px 10px;
+  background: #2F343D;
+}
+div#logBar{
+  position:relative;
+  float:right;
+  width:300px;
+  right:5%;
+}
+div#topBar a{
+
+  margin: 0;
+  text-decoration: none;
+  padding-left: 10px;
+  color: black;
+  color: white;
+  font-size: 130%;
+  font-family: "Times New Roman";
+
+}
+ 
+div#topBar a:hover{
+  background-color:#2F343D;
+  color: white;
+
+}
+
  div#headwrap{
-  position:absolute;
-  top: 0;
+
   left: 0;
   width:100%;
   height:110px;
   background: white;
 }
+div#navBar{
+
+  height:30px;
+
+ display:block;
+  /* Padding Top, Right, Bottom, Left */
+  padding: 5px 20px 5px 10px;
+  background:#01B1AF;
+}
+div#navBar a{
+  margin: 0;
+  text-decoration: none;
+  padding-left: 10px;
+  color: black;
+  font-size: 180%;
+  font-family: "Times New Roman";
+
+}
+ 
+div#navBar a:hover{
+  background-color:#01B1AF;
+  color: white;
+
+}
+
  div#bodywrap{
+  position:relative;
   width: 900px;
   min-height: 100%;
   margin: 0 auto ; 
@@ -66,8 +127,8 @@ main{
 /*WEBSITE TITLE*/
  .websiteTitle{
   position: absolute;
-  left: 23%;
-  top:5px;
+  left: 220px;
+  top:45px;
   margin-left: -250px;
   font-size: 28px;
   text-decoration: none;
@@ -80,58 +141,35 @@ main{
   background-color: white;
   color: black;
 }
- /*NAVIGATION BAR*/
- div#horzNav{
-  position: absolute;
-  right: 2%;
-  top:30px;
-  margin-left: -200px;
-  /*
-  float: right;
-  position: relative;
-  right:50px;
-  */
-  width:400px;
-  display:block;
-  /* Padding Top, Right, Bottom, Left */
-  padding: 10px 20px 10px 10px;
-  background: #01B1AF;
+ div#tabs{
+  float:left;
+  padding-top: 5px;
+ }
+/*SEARCHING BAR*/
+ div#searchBar{
+  position:relative;
+width:430px;
+float:right;
+right:5%;
 }
-div#horzNav a{
 
-  text-decoration: none;
-  padding: 0px 0px 0px 20px;
-  font-weight: bold;
-  color: black;
-}
- 
-div#horzNav a:hover{
-  background-color:#01B1AF;
-  color: white;
-}
-/*SEARCH BOX AND BUTTON
 #search-input{
-  position: relative;
-  width: 302px;
-  vertical-align: 80%;
-  top: 300px;
- left: 800px;
+  width: 353px;
+
+  height:20px;
 }
+
  
 #search-button{
-position: relative;
-  vertical-align: 80%;
+
   background-color: #00647D;
-  padding: 5px 12px;
+  padding: 7px 12px;
   font: 13px sans-serif;
   text-decoration: none;
   border: 1px solid #000;
   border-color: #aaa #444 #444 #aaa;
   color: #FFF;
-  top: 300px;
-left: 800px;
 }
-*/
 
 /*FOOT OF THE LAYOUT*/
 #leftfoot{
@@ -166,6 +204,68 @@ width:500px;
   color:#A8A8AA;
 }
 
+@media all and (max-width: 950px) {
+
+div#logBar {
+  position:absolute;
+  left: 600px;
+
+}
+
+div#searchBar{
+position:absolute;
+left:460px;
+}
+#leftfoot{
+  position:absolute;
+  left:20px;
+  margin-right:-250px;
+width:500px;
+}
+#midfoot{
+  position:absolute;
+  left:700px;
+  margin-left:-130px;
+  width: 260px;
+  /*margin-right: 20px;*/
+}
+}
+
+div#adHeader{
+  background:white;
+
+  padding :0px 20px 5px 20px;
+}
+div #adHeader a{
+
+  color: blue;
+  font-size: 150%;
+  font-family: "Times New Roman";
+}
+div#adTitle{
+  padding: 10px 15px 0px 15px;
+  color: blue;
+  font-size: 300%;
+  font-family: "Times New Roman";
+
+}
+div#adBody{
+  border: 2px solid #2B5EAF;
+  background: #F2F2F2;
+  padding: 10px 10px 10px 10px;
+  min-height: 25px;
+  font-size: 150%;
+  font-family: "Times New Roman";
+}
+div#comments{
+background: white;
+padding: 5px 15px 5px 10px;
+}
+#actions{
+  padding: 0px 10px 0px 10px;
+  font-size: 180%;
+  font-family: "Times New Roman";
+}
 
 
 

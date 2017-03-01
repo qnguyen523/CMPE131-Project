@@ -1,3 +1,4 @@
+#Reference: Ruby On Rails Tutorial by Michael Hartl, Chapter 8
 module SessionsHelper
 	#Log in the given user
 	def log_in(user)

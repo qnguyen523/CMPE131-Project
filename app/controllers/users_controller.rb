@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   # GET /users/1.jsons
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    # @posts = @user.posts
+    @posts = @user.posts.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /users/new
@@ -31,12 +32,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         UserMailer.registration_confirmation(@user).deliver_now
-        log_in @user
         format.html { redirect_to root_url, notice: 'Welcome to our website, please confirm your email' }
-        # format.html { redirect_to @user, notice: 'Welcome to our website, ' + @user.first }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new, notice: 'Something is wrong in create' }
+        format.html { render :new, notice: 'Something is wrong in creating your account' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -61,15 +60,17 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Account was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
+  
+  #Reference: Email Confirmation Tutorial https://coderwall.com/p/u56rra/ruby-on-rails-user-signup-email-confirmation-tutorial
   def confirm_email
     user = User.find_by_confirm_token(params[:id])
     if user
       user.email_activate
-      flash[:success] = 'in usercontroller, confirm_email success. Your account has been confirmed'
+      flash[:success] = 'Your account has been successfully confirmed'
       redirect_to root_url
     else
       flash[:error] = 'Error: User does not exist.'
@@ -79,13 +80,11 @@ class UsersController < ApplicationController
 
   
   private
-
-    # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+
     def user_params
       params.require(:user).permit(:first, :last, :email, :password, :password_confirmation)
     end
@@ -101,8 +100,8 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       unless @user == current_user
-        flash[:notice] = "Only edit your own account"
-        redirect_to(users_path) 
+        flash[:notice] = "You can only edit your own account"
+        redirect_to({:controller => 'users', :action =>'show'}) 
       end
     end
    

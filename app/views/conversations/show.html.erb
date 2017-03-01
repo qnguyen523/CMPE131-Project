@@ -1,5 +1,5 @@
-<h4><%= flash[:success] unless flash[:success].blank? %></h4>
-<!--link_to "Compose", new_conversation_path, class: "btn btn-success" -->
+<!--Reference: Mailboxer and private messaging tutorial
+From: http://josephndungu.com/tutorials/private-inbox-system-in-rails-with-mailboxer-->
 
 <!--Get mailbox folfers: inbox, sent, trash-->
 <%= render 'mailbox/folders' %>
@@ -14,6 +14,9 @@
     </div>
     <%= f.submit "Reply", class: 'btn btn-danger pull-right' %>
 <% end %>
+<!-- debug -->
+<p>
+</p>
       
 
 

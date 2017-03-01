@@ -1,10 +1,29 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+  autocomplete :book, :title, :full => true
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    # @books = Book.paginate(:page => params[:page], :per_page => 5)
+    # @books = Book.all
+    if params[:search]
+      if params[:search].downcase == ''
+        # show no book if search box is empty
+        @books = nil
+      elsif params[:search].downcase == 'all'
+      # if search box is "all", show all books
+        @books = Book.all
+      elsif params[:search]
+        @books = Book.search(params[:search])
+      end
+    else
+      # @books = Book.all
+      @books = Book.order("title").all
+    end
+  end
+
+  def sortedIndex
+      @books = Book.order("created_at DESC").all
   end
 
   # GET /books/1
@@ -24,15 +43,11 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    # @book = Book.new(book_params)
     @post = Post.find(params[:post_id])
     @book = @post.books.create(book_params)
 
     if @book.post_id == nil
-      # @book.post = Post.find(@host)
-      # @book.post = @post
-      # @post = Post.find(@post.id)
-      # @book.post = @post
+      
     else
       @book.post = Post.find(@book.post_id)
     end

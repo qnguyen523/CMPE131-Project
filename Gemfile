@@ -20,11 +20,16 @@ gem 'coffee-rails', '~> 4.2'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+# pagination
+gem 'will_paginate'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'rails-jquery-autocomplete'
+gem 'rails4-autocomplete'
+gem 'jquery-ui-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

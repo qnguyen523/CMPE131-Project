@@ -19,7 +19,6 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-
         <td><%= link_to book.title,  post_book_path(@post, book) %></td>
         <td><%= book.edition %></td>
         <td><%= image_tag book.picture.url, size: "150x150" %></td>
@@ -44,11 +43,11 @@
 
   </tbody>
 </table>
-<!-- testing -->
+<!-- adding create-book button -->
       <%= link_to t('.new', :default => t("helpers.links.Create_New_Book")),
             new_post_book_path(@post),
             :class => 'btn btn-primary' %>
-            <!-- done testing -->
+<!-- done with create-book button-->
 
 
 <!-- debug -->
